@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Google Maps Multiple Markers</title> 
+  <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+</head> 
+<body>
+  <div id="map" style="text-align:center;height:500px;width:600px;"></div>
+    
+  <script type="text/javascript">
+    var locations = [
+      ['Odette', 1.2897, 103.8514, 4],
+      ['Gaggan', 13.7376, 100.5422,3],
+      ['Den', 35.6732, 139.7127,5],
+      ['Attica', -37.8770 , 144.9973 ,2],
+      ['momofuku seibo', -33.8694, 151.1957, 1],
+      ['Vue de Monde',-37.8190, 144.9580,6],
+      ['Eleven Madison Park',40.7416, -73.9872],
+      ['Pujol',19.4324, -99.1948],
+      ['Chez Boulay: Bistro Boréal',46.8140, -71.2108],
+      ['Astrid and Gaston',-12.1214, -77.0280],
+      ['El Obrero',18.4003, -66.0432],
+      ['Coco Bambu Anhembi',-23.5127,-46.6538],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 1,
+      center: new google.maps.LatLng(0,0),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
+</html>
