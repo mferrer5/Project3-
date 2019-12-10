@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- Template by Quackit.com -->
+<!-- Images by various sources under the Creative Commons CC0 license and/or the Creative Commons Zero license. 
+Although you can use them, for a more unique website, replace these images with your own. -->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Continental Cookbook</title>
+
+    <!-- Bootstrap Core CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom Fonts from Google -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+</head>
+<body>
+
+        <!-- Navigation -->
+        <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Logo and responsive toggle -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <span class="glyphicon glyphicon-globe"></span> 
+                        CONTINENTAL COOKBOOK
+                    </a>
+                </div>
+                
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="worldMap.html">Map</a>
+                        </li>
+                        <li>
+                            <a href="recipies.html">Recipes</a>
+                        </li>
+                        <li>
+                             <a href="videos.html">Videos</a>
+                        </li>
+                    </ul>
+                    
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+
+        <section class="content">
+                <div class="container">
+                    <div class="row">
+                    <h2 class="section-header">Map for Restaurant Recommendations Around the World</h2>
+                            <hr>
+                        <div class="col-sm-6">
+        <div id="map" style="width: 800px; height: 700px;" object="center"></div>
+        <script type="text/javascript">
+            var locations = [
+              ['Odette', 1.2897, 103.8514, 4],
+              ['suhring', 13.7108, 100.5454],
+              ['Den', 35.6732, 139.7127,5],
+              ['Attica', -37.8770 , 144.9973 ,2],
+              ['momofuku seiobo', -33.8694, 151.1957, 1],
+              ['Vue de Monde',-37.8190, 144.9580,6],
+              ['Eleven Madison Park',40.7416, -73.9872],
+              ['Pujol',19.4324, -99.1948],
+              ['Chez Boulay: Bistro Boréal',46.8140, -71.2108],
+              ['Astrid and Gaston',-12.1214, -77.0280],
+              ['El Obrero',18.4003, -66.0432],
+              ['Coco Bambu Anhembi',-23.5127,-46.6538],
+              ['Restaurant mosaic',-25.7611, 27.9992],
+              ['La Colombe',-34.0152, 18.4033],
+              ['Hartford House,KwaZulu-Natal Midlands',-29.2205,29.9370],
+              ['el celler de can roca',41.993240,2.808020],
+              ['Osteria Francescana',44.6448, 10.9216],
+              ['Noma',55.6828, 12.6105],
+            ];
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 1,
+              center: new google.maps.LatLng(0,0),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            for (i = 0; i < locations.length; i++) {  
+              marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+              });
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                  infowindow.setContent(locations[i][0]);
+                  infowindow.open(map, marker);
+                }
+              })(marker, i));
+            }
+          </script>
+  <p class="lead text-light">Click a marker to find out the name of a restaurant.</p>
+   </div>                          
+</div>
+</div>
+</section>
+<section class=content-2>
+<p style="font-family:century gothic;font-size:30px; text-align:center"> Links to Restaurants
+        <table>
+            <thead>
+              <tr>
+                <th scope="col">Cuisine Style</th>
+                <th scope="col">Restaurants</th>
+              </tr>
+              <tr>
+                <td>North America</td>
+                <td>
+                    <ul>
+                <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.elevenmadisonpark.com/ " target="_new">Eleven Madison Park</a></li>
+                <li style="font-family:century gothic;font-size:15px;"><a HREF="https://pujol.com.mx/en/ " target="_new">Pujol</a></li>
+                <li style="font-family:century gothic;font-size:15px;"><a HREF="https://chezboulay.com/" target="_new">Chez Boulay: Bistro Boréal</a></li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>South America</td>
+                <td>
+                    <ul>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="http://www.astridygaston.com/ " target="_new">Astrid and Gaston</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.facebook.com/Bodegon-El-Obrero-la-Boca-351714174904982/" target="_new">El Obrero</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://cocobambu.com/cardapio1/" target="_new">Coco Bambu Anhembi</a></li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Africa</td>
+                <td>
+                    <ul>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.restaurantmosaic.com/" target="_new">Restaurant Mosaic</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.lacolombe.co.za/" target="_new">La Columbe at Silvermist</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="http://www.hartford.co.za/" target="_new">Hartford House, KwaZulu-Natal Midlands</a></li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Europe</td>
+                <td>
+                    <ul>
+                         <li style="font-family:century gothic;font-size:15px;"><a HREF="https://cellercanroca.com/" target="_new">El Celler de Can Roca</a></li>
+                         <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.osteriafrancescana.it/" target="_new">Osteria Francescana</a></li>
+                         <li style="font-family:century gothic;font-size:15px;"><a HREF="https://noma.dk/" target="_new">Noma</a></li>
+                     </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Asia</td>
+                <td>
+                    <ul>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="http://www.odetterestaurant.com" target="_new">Odette</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="http://restaurantsuhring.com/" target="_new">Sühring</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.jimbochoden.com/en/" target="_new">Den</a></li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Australia</td>
+                <td>
+                    <ul>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.attica.com.au/" target="_new">Attica</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://seiobo.momofuku.com/menu/tasting-menu/" target="_new">Momofuku Seiobo</a></li>
+                        <li style="font-family:century gothic;font-size:15px;"><a HREF="https://vuedemonde.com.au/" target="_new">Vue de Monde</a></li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                    <td>Antarctica</td>
+                    <td>
+                        <ul>
+                            <li style="font-family:century gothic;font-size:15px;"><a HREF="https://www.iexplore.com/articles/travel-guides/antarctica/antarctica/food-and-restaurants" target="_new">About Food and Restaurants in Antarctica</a></li>
+                         </ul>
+
+                    </td>
+            </tr>
+            </thead>
+          </table> 
+           
+
+</p>
+</section>
+      
+      <!-- Footer -->
+    <footer class="page-footer">
+            <!-- Contact Us -->
+            <div class="contact">
+                <div class="container">
+                    <h2 class="section-heading">Website By</h2>
+                    <p><br> Michelle Ferrer, Jude Dizon, Yuran Zhang</p>
+                    <p><br> Villanova University</p>
+                    <a href="https://github.com/mferrer5/Project3-">Github Repository</a>
+                </div>
+            </div>
+                
+            <!-- Copyright etc -->
+            <div class="small-print">
+                <div class="container">
+                    <p>Copyright 2019 &copy; Website Template from Quackit</p>
+                </div>
+            </div>    
+        </footer>
+    
+        <!-- jQuery -->
+        <script src="js/jquery-1.11.3.min.js"></script>
+    
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+    
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+        
+        <!-- Custom Javascript -->
+        <script src="js/custom.js"></script>
+    
+    </body>
+    
+    </html>
+    
